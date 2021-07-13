@@ -4,6 +4,9 @@ nav {
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -46,4 +49,8 @@ nav p {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.contentPusher {
+  height: 120px;
 }
