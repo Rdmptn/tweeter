@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  
 }
 
 label {
@@ -14,7 +13,9 @@ label {
 textarea {
   display: flex;
   height: 40px;
+  width: 100%;
   border: none;
+  outline: none;
   resize: none;
   background-color: #f4f1ec;
 }

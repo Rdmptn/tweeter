@@ -23,6 +23,9 @@
     
     <!-- New Tweet Section CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    
+    <!-- Individual Tweet CSS -->
+    <link rel="stylesheet" href="/styles/view-tweet.css" type="text/css" />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -53,7 +56,7 @@
       </div>
     </nav>
     
-    <header>
+    <header class="profilehead">
       <div class="avatar">
         <img src="/images/profile-hex.png"> 
       </div>
@@ -77,6 +80,31 @@
         </div>
       </form>
     </section>
+    
+    <article class="tweetData">
+      <header class="tweetHeader">
+        <div class="tweetUserDetails">
+          <img src="/images/profile-hex.png" width="64" height="64">
+          <p class="tweetUser">Tweet User Name</p>
+        </div>
+        <div class="userAt">
+          <p>@username</p>
+        </div>
+      </header>
+      <section class="tweetContent">
+        <p>La lalalaal la la lalaala lalalalalalalala lalal</p>
+      </section>
+      <footer class="tweetFooter">
+        <section class="timeSinceTweet">
+          <p>10 Days Ago</p>
+        </section>
+        <section class="tweetButtons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </section>
+      </footer>
+    </article>
     
     </main>
   </body>
