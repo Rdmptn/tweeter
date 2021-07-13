@@ -1,0 +1,49 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+nav span {
+  padding-top: 20px;
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newteet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.subtext {
+  display: flex;
+  flex-direction: row;
+}
+
+nav strong {
+  margin-top: 40px;
+  margin-right: 4px;
+}
+
+nav p {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.navicon i {
+  padding-top: 5px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
