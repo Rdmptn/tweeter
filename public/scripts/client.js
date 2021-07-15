@@ -42,8 +42,13 @@ $(document).ready(function() {
   $('#post-tweet').submit(function() {
     event.preventDefault();
     let storeTweet = $('#tweet-text').serialize();
+    if (storeTweet.length - 5 >= 140 || storeTweet.length - 5 === 0) {
+      alert('Cannot post empty tweet or tweet over 140 characters, please try again!')
+      return;
+    }
     $.post('tweets', storeTweet) 
     .then(function() {
+      $('#tweet-text').val('');
       loadTweets();
     });
   });
