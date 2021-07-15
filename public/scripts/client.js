@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
  
-// const data = [
-    // {
-      // "user": {
-        // "name": "Newton",
-        // "avatars": "https://i.imgur.com/73hZDYK.png"
-        // ,
-        // "handle": "@SirIsaac"
-      // },
-      // "content": {
-        // "text": "If I have seen further it is by standing on the shoulders of giants"
-      // },
-      // "created_at": 1461116232227
-    // },
-    // {
-      // "user": {
-        // "name": "Descartes",
-        // "avatars": "https://i.imgur.com/nlhLi3I.png",
-        // "handle": "@rd" },
-      // "content": {
-        // "text": "Je pense , donc je suis"
-      // },
-      // "created_at": 1461113959088
-    // }
-  // ]
-
 $(document).ready(function() {
   
   const loadTweets = function() {
@@ -43,18 +18,24 @@ $(document).ready(function() {
   $('#post-tweet').submit(function() {
     event.preventDefault();
     let storeTweet = $('#tweet-text').serialize();
-    if (storeTweet.length - 5 >= 140 || storeTweet.length - 5 === 0) {
-      alert('Cannot post empty tweet or tweet over 140 characters, please try again!')
+    if (storeTweet.length - 5 >= 140) {
+      $('#errorMessage').html('💥 Cannot post a tweet over 140 characters, please try again! 💥');
+      $('#errorMessage').slideDown();
+      return;
+    } else if (storeTweet.length - 5 === 0) {
+      $('#errorMessage').html('💥 Cannot post an empty tweet, please try again! 💥');
+      $('#errorMessage').slideDown();
       return;
     }
     $.post('tweets', storeTweet) 
     .then(function() {
+      $('#errorMessage').slideUp();
       $('#tweet-text').val('');
       $('.counter').val('140');
       loadTweets();
     });
   });
-  
+
 });
 
 const renderTweets = function(tweets) {

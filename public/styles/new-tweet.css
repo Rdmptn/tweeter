@@ -4,6 +4,18 @@
   align-content: flex-start;
 }
 
+#errorMessage {
+  border: 2px solid red;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
 label {
   display: flex;
   font-weight: 600;
