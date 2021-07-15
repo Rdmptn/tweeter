@@ -65,6 +65,13 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweet) {
+  
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   let $tweet = $(`
   <article class="tweetData">
       <header class="tweetHeader">
@@ -77,7 +84,7 @@ const createTweetElement = function(tweet) {
         </div>
       </header>
       <section class="tweetContent">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </section>
       <footer class="tweetFooter">
         <section class="timeSinceTweet">
