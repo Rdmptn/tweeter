@@ -33,6 +33,7 @@ $(document).ready(function() {
   
   const loadTweets = function() {
     $.get('tweets', function(storedTweets) {
+      $('.loadedTweets').empty();
       renderTweets(storedTweets);
     });
   };
@@ -49,6 +50,7 @@ $(document).ready(function() {
     $.post('tweets', storeTweet) 
     .then(function() {
       $('#tweet-text').val('');
+      $('.counter').val('140');
       loadTweets();
     });
   });
@@ -58,7 +60,7 @@ $(document).ready(function() {
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     let thisTweet = createTweetElement(tweet);
-    $('#tweets-container').append(thisTweet);
+    $('.loadedTweets').prepend(thisTweet);
   }
 };
 
