@@ -31,6 +31,12 @@ const data = [
 
 $(document).ready(function() {
   renderTweets(data);
+  $('#post-tweet').submit(function() {
+    event.preventDefault();
+    let storeTweet = $('#tweet-text').serialize();
+    $.post('tweets', storeTweet) 
+    // .then renderTweets(data);
+  });
 });
 
 const renderTweets = function(tweets) {
