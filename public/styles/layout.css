@@ -30,3 +30,15 @@ main {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@media only screen and (min-width: 1024px) {
+  
+  main {
+    padding-top: 4%;
+    float: right;
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+}

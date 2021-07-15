@@ -16,3 +16,23 @@
   justify-content: center;
   color: #FFFFFF;
 }
+
+@media only screen and (min-width: 1024px) {
+  
+  .profilehead {  
+    float: left;
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+  
+  .avatar { 
+    padding-top: 5%;
+  }
+  
+  .username h2 {
+    padding-bottom: 5%;
+    margin-top: 0;
+  }
+  
+}
