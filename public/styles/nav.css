@@ -29,6 +29,10 @@ nav span {
   justify-content: flex-end;
 }
 
+nav div:hover {
+  cursor: pointer;
+}
+
 .subtext {
   display: flex;
   flex-direction: row;

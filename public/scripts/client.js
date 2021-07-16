@@ -15,6 +15,19 @@ $(document).ready(function() {
   
   loadTweets(); 
   
+  let visStatus = 'up';
+  
+  $('.newtweet').click(function() {
+    if (visStatus === 'up') {
+      $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
+      visStatus = 'down';
+    } else {
+      $('.new-tweet').slideUp();
+      visStatus = 'up';
+    }
+  });
+  
   $('#post-tweet').submit(function() {
     event.preventDefault();
     let storeTweet = $('#tweet-text').serialize();
