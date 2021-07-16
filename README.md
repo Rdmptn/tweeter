@@ -5,13 +5,13 @@ Built using HTML, CSS, JavaScript, jQuery and AJAX.
 
 ## Screenshots
 
-!["Desktop View"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Desktop%20With%20Form%20Visible.png?raw=true)
+!["Desktop View"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Desktop%20With%20Form%20Visible.png?raw=true)  
 Desktop layout with form visible for writing new tweets.
 
-!["Mobile View"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Mobile%20With%20Form%20Hidden.png?raw=true)
+!["Mobile View"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Mobile%20With%20Form%20Hidden.png?raw=true)  
 Mobile layout with form hidden (default), form displays via new tweet buttons
 
-!["Form error handling"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Error%20Handling.png?raw=true)
+!["Form error handling"](https://github.com/Rdmptn/tweeter/blob/master/docs/Tweeter%20Error%20Handling.png?raw=true)  
 Responsive character counter and error messages for non-compliant tweets
 
 ## Dependencies
