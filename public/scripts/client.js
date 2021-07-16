@@ -4,8 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
  
+// Entire client code wrapped in ready function to ensure page fully loads before interactive features can be called
 $(document).ready(function() {
   
+  // Grabs database, then clears the page and adds all the tweets from the database back to the page
   const loadTweets = function() {
     $.get('tweets', function(storedTweets) {
       $('.loadedTweets').empty();
@@ -13,19 +15,13 @@ $(document).ready(function() {
     });
   };
   
+  // Runs once on page load to display tweets already stored in database
   loadTweets(); 
   
+  // Variable for default form visibility where up means hidden, since the form is hidden by default
   let visStatus = 'up';
   
-  $('.newtweet').click(function() {
-    writeTweet(visStatus);
-  });
-  
-  $('#bottomTweetButton').click(function() {
-    $(window).scrollTop(0);
-    writeTweet("up");
-  });
-  
+  // Function for hiding/displaying new tweet form
   const writeTweet = function(currentVisibility) {
     if (currentVisibility === 'up') {
       $('.new-tweet').slideDown();
@@ -37,7 +33,18 @@ $(document).ready(function() {
     }
   };
  
+  // Top button which hides/displays form
+  $('.newtweet').click(function() {
+    writeTweet(visStatus);
+  });
   
+  // Bottom button which scrolls to top of page and displays the form if hidden, but never hides it
+  $('#bottomTweetButton').click(function() {
+    $(window).scrollTop(0);
+    writeTweet("up");
+  });
+  
+  // Logic for posting a new tweet and displaying it on the page, returns error messages on the screen if certain criteria aren't met
   $('#post-tweet').submit(function() {
     event.preventDefault();
     let storeTweet = $('#tweet-text').serialize();
@@ -61,6 +68,7 @@ $(document).ready(function() {
 
 });
 
+// Loops through array of tweet objects, creates a new tweet for each object and displays it prior to the previous one
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     let thisTweet = createTweetElement(tweet);
@@ -68,14 +76,17 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Creates a tweet from information in a given object
 const createTweetElement = function(tweet) {
   
+  // Function to ensure code blocks are tweeted as text and can't interact with the app
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
   
+  // Creates an html article containing data extracted from database for that tweet
   let $tweet = $(`
   <article class="tweetData">
       <header class="tweetHeader">
