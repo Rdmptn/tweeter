@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a responsive, single-page Twitter clone that runs off a basic express server.
+Tweeter is a responsive, single-page Twitter clone that runs off a basic express server.  
 Built using HTML, CSS, JavaScript, jQuery and AJAX.
 
 ## Screenshots
