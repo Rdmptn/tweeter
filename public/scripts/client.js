@@ -18,7 +18,16 @@ $(document).ready(function() {
   let visStatus = 'up';
   
   $('.newtweet').click(function() {
-    if (visStatus === 'up') {
+    writeTweet(visStatus);
+  });
+  
+  $('#bottomTweetButton').click(function() {
+    $(window).scrollTop(0);
+    writeTweet("up");
+  });
+  
+  const writeTweet = function(currentVisibility) {
+    if (currentVisibility === 'up') {
       $('.new-tweet').slideDown();
       $('#tweet-text').focus();
       visStatus = 'down';
@@ -26,7 +35,8 @@ $(document).ready(function() {
       $('.new-tweet').slideUp();
       visStatus = 'up';
     }
-  });
+  };
+ 
   
   $('#post-tweet').submit(function() {
     event.preventDefault();
